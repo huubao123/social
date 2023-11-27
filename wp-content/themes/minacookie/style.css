@@ -1,0 +1,30 @@
+/*
+Theme Name: minacookie 1.0
+Theme URI: 
+Author: mangoads
+Author URI: 
+Description: minacookie 1.0
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, two-columns, left-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Text Domain: recruit
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*::placeholder {
+  color: #b6b6b6;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #b6b6b6;
+}
+
+::-ms-input-placeholder {
+  color: #b6b6b6;
+}*/
+
+/*index*/
+.marketing-nav--secondary .marketing-nav__items .cat-item a { font-size: 19px; }

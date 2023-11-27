@@ -1,0 +1,202 @@
+/*=========================================================*/
+/*Tho dang*/
+/*=========================================================*/
+/*=================Private====================*/
+.p-recruit1 {
+	padding-top: 80px;
+	.dl-table {
+		@include respond-to(767) { display: block!important; }
+		.thumb-1 { @include respond-to(767) { margin-bottom: 60px; } }
+	}
+	[class*=dl-table]>* {
+		@include respond-to(767) { display: block; }
+	}
+	.bgimg {
+		background-image: url("../images/BG-2.svg");
+		@include respond-toSP(1200) {
+			max-height: 910px;
+			background-size: initial;
+		}
+		@include respond-toSP(1920) { background-size: cover; }
+		@media only screen and (max-width: 1199px) and (min-width: 992px) { max-height: 1058px; }
+		@media only screen and (max-width: 991px) and (min-width: 768px) { max-height: 1153px; }
+	}
+	.divtext { text-align: justify; }
+	&__title1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+		//@include respond-toSP(768) { min-height: 154px; }
+	}
+	&__group1 {
+		padding-bottom: 40px;
+		.xstitle {
+			margin-bottom: 20px;
+			font-size: 30px;
+			font-weight: 700;
+		}
+	}
+	&__block1 {
+		text-align: justify;
+		@include respond-toSP(1200) { padding-bottom: 150px; }
+		// @media only screen and (max-width: 1199px) and (min-width: 992px) { min-height: 515px; }
+		// @media only screen and (max-width: 991px) and (min-width: 768px) { min-height: 650px; }
+	}
+	&__block2 {
+		&[class*=dl-table]>* {
+			@media only screen and (max-width: 1199px) and (min-width: 992px) { display: block; }
+		}
+	}
+}
+
+.p-recruit2 {
+	position: relative;
+	text-align: justify;
+	&__group1 { text-align: center; }
+}
+
+.p-recruit3 {
+	.equal1 {
+		@include respond-to(767) { height: auto!important; }
+	}
+	h3 {
+		@include respond-to(767) { text-align: left; margin-top: 30px; }
+	}
+	&__img1 {
+		@include respond-to(767) { width: 100%!important; }
+		img {
+			@include respond-to(767) { max-width: 100%!important; }
+		}
+	}
+}
+
+.p-recruit4 {
+	.table {
+		thead {
+			font-size: 18px;
+			font-weight: 700;
+			th {
+		    padding: 12px 8px;
+				text-align: left;
+				&:last-child { text-align: center; }
+			}
+			tr {
+				&:hover {
+					background: unset;
+					color: initial;
+				}
+			}
+		}
+		tr>td.td3 span {
+			max-width: 800px;
+			overflow: hidden;
+	    display: -webkit-box;
+	    -webkit-line-clamp: 1;
+	    -webkit-box-orient: vertical;
+		}
+		.td2 {
+			min-width: 90px;
+			@include respond-toSP(768) { min-width: 100px; }
+		}
+	}
+	.table-hover {
+		tbody {
+			tr:hover {
+		    background-color: rgba(0, 0, 0, 0.09);
+		    color: $yellow;
+			}
+		}
+		a:hover { color: $yellow; }
+	}
+}
+
+.p-post1 {
+	.sidebar {
+		.b { text-align: justify; }
+	}
+	.widget-recruitment {
+		.widget-title {
+			a {
+				transition: all ease 0.3s;
+				&:hover{ color: $yellow; }
+			}
+		}
+		.desc {
+	    overflow: hidden;
+	    display: -webkit-box;
+	    -webkit-line-clamp: 3;
+	    -webkit-box-orient: vertical;
+		}
+		ul {
+			.xstitle { margin-bottom: 7px; }
+		}
+	}
+	.entry-content { text-align: justify; }
+	&__list1 {
+		a {
+			.xstitle { transition: all ease 0.4s; }
+			&:hover {
+				.xstitle { color: $yellow; }
+			}
+		}
+	}
+}
+
+.p-collaborator1 {
+	text-align: justify;
+}
+
+.p-contact2 {
+	position: relative;
+	.rowlabel {
+		a {
+			transition: all ease 0.3s;
+			&:hover { color: $yellow; }
+		}
+	}
+}
+
+.p-about1 {
+	.item {
+		.inner {
+			@include respond-to(767) {
+				padding: 20px;
+			}
+		}
+	}
+	.c-title1 {
+		@include respond-to(767) { margin-bottom: 28px; }
+	}
+}
+.p-about2 {
+	padding-top: 50px;
+	padding-bottom: 100px;
+	@include respond-to(767) { padding-bottom: 50px; }
+	.about2 {
+		&-mbSP1 {
+			@include respond-to(767) { margin-bottom: 25px; }
+		}
+	}
+	&.mg10 {
+		.c-title1 {
+			@include respond-to(767) { margin-bottom: 15px; }
+		}
+		.col-2 {
+			.item {
+				@include respond-to(767) { margin-top: 10px; }
+			}
+		}
+	}
+}
+.p-about3 {
+	&:after { background-color: unset; }
+	.functionSlide {
+		background: $gray-1;
+		.item {
+			.readmore {
+				&:hover { color: $yellow; }
+			}
+		}
+	}
+}

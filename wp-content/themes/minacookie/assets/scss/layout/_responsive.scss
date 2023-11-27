@@ -1,0 +1,80 @@
+@mixin resettable{
+	display: block  !important;
+	&>* { display: block !important; width: auto !important; }
+}
+
+@include max1199 {
+
+
+.page-desc {
+    padding: 70px 0;
+}
+.section {
+    padding: 60px 0;
+}
+.section-b {
+    padding-bottom: 60px;
+}
+.section-t {
+    padding-top: 60px;
+}
+
+	.wrap-ss-1 .mg01 {
+	    padding: 100px 0;
+	}
+.mg06 {
+    padding-top: 100px;
+}
+
+.mg31 {
+    min-height: 500px;
+}
+.mg32 {
+    margin-top: 0;
+}
+
+
+
+
+} // end media
+
+
+@include max991 {
+
+
+	.ss-radius-bottom2-2 {
+	    padding-bottom: 80px!important;
+	}
+
+	.mg26, .mg32 {
+		.dl-table {
+			@include  resettable;
+		}
+	}
+
+	.mg44 {
+		.item { margin-bottom: 20px; }
+	}
+
+
+
+.mg63 .divtext {
+    text-align: center;
+    width: auto;
+}
+	.mg65 {
+
+		.row {
+			max-width: 500px; margin:0 auto;
+			&>* { margin-bottom: 30px; }
+		}
+		.formcontact {
+		    margin-top: 0;
+		    .inner {    padding: 50px 20px;}
+		}
+	}
+
+
+} // end media
+
+

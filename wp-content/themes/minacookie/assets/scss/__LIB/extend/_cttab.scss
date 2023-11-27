@@ -1,0 +1,167 @@
+%cttab-n1 {
+  .tab-menu {
+    margin:0 0 50px; list-style: none;    overflow: hidden; position: relative; display: table; width: 100%;
+    &:after {
+      content: ""; height: 2px; background-color: #B3B3B3; position: absolute; bottom: 0; left:0; right: 0;
+    }
+    &>div { 
+      display: table-cell !important; vertical-align: middle;   height: 55px; border:2px solid transparent; width: 33.33%;   
+      color: #707070;  text-align: center;  font-size: 15px; line-height: 50px; cursor: pointer;  
+        font-weight: 700; text-transform: uppercase; position: relative;
+      &:hover { 
+         color: $color1;
+      }
+      &.active {
+        position: relative; z-index: 5;
+        border-color: #B3B3B3;
+        border-bottom-color: #fff;
+        &>a {  } 
+      }
+    }   
+
+  }
+
+  .tab-content {
+    min-height: 1px; position: relative;
+    &>div {
+      z-index: 0; opacity: 0; visibility: hidden; max-height: 0; overflow: hidden; position: absolute; top: 0; left:0; right: 0;
+
+      &.active {
+        z-index: 5; opacity: 1; visibility: visible; max-height: inherit; position: relative;
+      }
+      &.tab-map { .tab-inner { padding-bottom: 0 !important; } }
+    }
+  }
+
+
+}
+
+
+%cttab-v1 {
+  position: relative;
+  &>.tab-menu {
+    list-style: none; 
+    &>div { 
+      @include transition(0.2s);
+      display: block;  cursor: pointer; position: relative;
+      font-family: $v1_item_font;
+      padding: $v1_item_pd_tb $v1_item_pd_lr $v1_item_pd_tb $v1_item_pd_lr;
+      font-family: $v1_item_font; 
+      font-weight: $v1_item_weight;
+      text-transform: $v1_item_transform;
+      font-size: $v1_item_size;
+      color: $v1_item_color;
+      line-height: $v1_item_lineheight;
+      @if( $v1_item_bg != none){
+        background: $v1_item_bg;
+      }
+
+      @if($v1_triangle != none){
+        .triangle {
+          @include middleY;
+          text-align: $v1_triangle_align;
+          width: $v1_triangle_width;     
+          opacity: $v1_triangle_opacity;      
+
+          @if($v1_triangle_color != inherit) {
+            color: $v1_triangle_color;
+          }
+                 
+          @if($v1_triangle == left) {
+            left: 0;
+          }@else if($v1_triangle == right) {
+            right: 0;
+          }
+        }
+      }
+
+      @if($v1_triangle == left) {
+        padding-left: $v1_triangle_width;
+      }@else if($v1_triangle == right) {
+        padding-right: $v1_triangle_width;
+      }
+
+      &:hover { 
+        color: $color1;
+      }
+      &.active {
+        color: $v1_item_active_color;
+        @if( $v1_item_bg != none and $v1_item_active_bg != inherit){
+          background: $v1_item_active_bg;
+        }      
+
+        @if($v1_triangle != none){
+          .triangle {
+            opacity: 1;
+            @if($v1_triangle_active_content != inherit) {
+              &:before { content: $v1_triangle_active_content }
+            }
+
+          }
+        }
+      }
+
+
+      $border : $v1_line_size $v1_line_style $v1_line_color;
+
+      @if($v1_line==0) {
+        border-top: $border; 
+      }@else if($v1_line==1) {
+        border-bottom: $border; 
+      }@else if($v1_line==2) {
+        & + div {
+          border-top:$border; 
+        }
+      }@else {
+        border-bottom: $border;   
+        &:first-child {
+          border-top: $border; 
+        }      
+      }
+
+
+    }   
+  }
+
+  &>.tab-content {
+    min-height: 1px; position: relative; 
+    &>div {
+      padding-top: $v1_item_pd_tb;
+      z-index: 0; opacity: 0; visibility: hidden; max-height: 0; overflow: hidden; position: absolute; top: 0; left:0; right: 0; 
+      &.active {
+        z-index: 5; opacity: 1; visibility: visible; max-height: inherit; position: relative;
+      }
+    }
+  }
+
+}
+
+
+%cttab-v2 {
+  .tab-menu {
+    margin:0 0 50px; list-style: none;    overflow: hidden; position: relative;
+    &>div { 
+      float: left;   color: #000;  font-size: 18px; line-height: 24px; cursor: pointer;   border-bottom:1px solid transparent;
+      font-weight: 700; padding: 8px 30px;
+      &:not(:first-child) { border-left:1px solid #9B9B9B;}
+      &:hover { 
+        color: $color1;
+      }
+      &.active {
+      position: relative; z-index: 5;
+      border-color: #000;
+      }
+    }   
+  }
+  .tab-content {
+    min-height: 1px; position: relative;
+    &>div {
+      z-index: 0; opacity: 0; visibility: hidden; max-height: 0; overflow: hidden; position: absolute; top: 0; left:0; right: 0;
+
+      &.active {
+        z-index: 5; opacity: 1; visibility: visible; max-height: inherit; position: relative;
+      }
+      &.tab-map { .tab-inner { padding-bottom: 0 !important; } }
+    }
+  }
+}

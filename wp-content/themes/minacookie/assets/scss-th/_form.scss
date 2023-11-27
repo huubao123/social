@@ -1,0 +1,68 @@
+// ninja form
+.nf-form-fields-required {
+  display: none;
+}
+
+
+.nf-form-content button, .nf-form-content input[type=button], .nf-form-content input[type=submit]{
+  background-color: $yellow !important;
+  text-transform: none;
+  line-height: inherit;
+  
+}
+
+#ninja_forms_required_items, .nf-field-container{
+  margin-bottom: 0;
+}
+
+
+.form-subscribe {
+  overflow: hidden;
+  .email-wrap{
+    .nf-field-label{ display: none;}
+  }
+  .nf-form-content input[type=button]{
+    padding: 0 30px !important;
+    margin-left: 10px;
+  }
+  .nf-form-content input[type=email]{
+    border-radius: 4px;
+    width: 300px;
+  }
+  p{
+    margin: 0;
+  }
+  
+  .nf-error-msg.nf-error-field-errors{
+    display: none;
+  }
+}
+
+#mc-embedded-subscribe-form,
+.mc4wp-form{
+  width: 500px;
+  max-width: 90%;
+  .input,
+  .btn{
+    height: 50px;
+    width: 100%;
+    text-transform: none;
+  }
+  .btn{
+    padding: 0;
+    text-align: center;
+  }
+}
+
+
+#mc_embed_signup div.mce_inline_error{
+  color: #6B0505!important; background-color: transparent !important;
+}
+
+@media screen and (min-width: 46.875em){
+  .form-subscribe {
+    // max-width: 28.125em;
+    max-width: 450px;
+
+  }
+}

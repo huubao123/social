@@ -1,0 +1,19 @@
+%menu-content-1 {
+  margin:0 0 50px; list-style: none;    overflow: hidden; position: relative;
+  &>* { 
+    float: left;   color: #737373;  font-size: 18px; line-height: 24px; cursor: pointer;   border-bottom:1px solid transparent;
+    font-weight: 700; padding: 0; text-align: center;
+    a { display: block; padding: 13px 30px;}
+    &:not(:first-child) { border-left:1px solid #9B9B9B;}
+    &:hover { 
+      color: $color1;
+    }
+    &.active {
+      color: #000;
+      position: relative; z-index: 5;
+      border-color: #000;
+    }
+  }   
+}
+
+

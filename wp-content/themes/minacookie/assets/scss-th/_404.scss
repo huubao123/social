@@ -1,0 +1,26 @@
+.page-error {
+  margin: 100px auto;
+   >span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 250px;
+    z-index: -1;
+    white-space: nowrap;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #f1f1f1;
+    >span {
+        display: inline-block;
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+  }
+  .error-text>h4 {
+    margin-top: 2px;
+    color: #737373;
+  }
+}
+.error404 .l-main{
+  margin-top: 70px;
+}

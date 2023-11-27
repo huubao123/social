@@ -1,0 +1,109 @@
+// pagination 
+/*----------------------------------------------------------------------------------------------*/
+%pagination-1 {
+  list-style: none;
+  @include item(
+    $pg1_ul_font, 
+    $pg1_ul_weight, 
+    $pg1_ul_size, 
+    $pg1_ul_color, 
+    $pg1_ul_bg, 
+    $pg1_ul_radius, 
+    $pg1_ul_border, 
+    $pg1_ul_border_color, 
+    $pg1_ul_lineheight, 
+    $pg1_ul_width, 
+    $pg1_ul_height, 
+    $pg1_ul_text_align, 
+    $pg1_ul_padding, 
+    $pg1_ul_margin, 
+    $pg1_ul_shadow, 
+    $pg1_ul_float, 
+    $pg1_ul_transform, 
+  );
+
+
+  &>* { 
+    float: $pg1_li_float; display: inline-block; 
+    @if($pg1_li_space != n and $pg1_li_space > 0) {
+      &:not(:first-child) { margin-left: $pg1_li_space;}
+    }
+  }
+  .page-numbers {
+      display: block; position: relative; overflow: hidden; @extend .tss;  
+      @include item(
+        $pg1_i_font, 
+        $pg1_i_weight, 
+        $pg1_i_size, 
+        $pg1_i_color, 
+        $pg1_i_bg, 
+        $pg1_i_radius, 
+        $pg1_i_border, 
+        $pg1_i_border_color, 
+        $pg1_i_lineheight, 
+        $pg1_i_width, 
+        $pg1_i_height,
+        $pg1_i_text_align,
+        $pg1_i_padding,
+        $pg1_i_margin,
+        $pg1_i_shadow,
+        $pg1_i_float,
+        $pg1_i_transform, 
+      );
+
+      &.prev,&.next  {
+        
+        @if($pg1_icon_size != n and $pg1_icon_size > 0) {
+          font-size: $pg1_icon_size; 
+        }        
+        i {
+            display: inline-block;
+        }  
+      }
+      &:hover {
+
+        @include item(
+          $pg1_i_hover_font,
+          $pg1_i_hover_weight,
+          $pg1_i_hover_size,
+          $pg1_i_hover_color,
+          $pg1_i_hover_bg,
+          $pg1_i_hover_radius,
+          $pg1_i_hover_border,
+          $pg1_i_hover_border_color,
+          $pg1_i_hover_lineheight,
+          $pg1_i_hover_width,
+          $pg1_i_hover_height,
+          $pg1_i_hover_text_align,
+          $pg1_i_hover_padding,
+          $pg1_i_hover_margin,
+          $pg1_i_hover_shadow,
+          $pg1_i_hover_float,
+          $pg1_i_hover_transform, 
+        );
+
+      }
+      &.current { 
+        @include item(
+          $pg1_i_active_font,
+          $pg1_i_active_weight,
+          $pg1_i_active_size,
+          $pg1_i_active_color,
+          $pg1_i_active_bg, 
+          $pg1_i_active_radius, 
+          $pg1_i_active_border,
+          $pg1_i_active_border_color,
+          $pg1_i_active_lineheight,
+          $pg1_i_active_width,
+          $pg1_i_active_height,
+          $pg1_i_active_text_align,
+          $pg1_i_active_padding,
+          $pg1_i_active_margin,
+          $pg1_i_active_shadow,
+          $pg1_i_active_float,
+          $pg1_i_active_transform, 
+        );
+      }       
+  }
+
+}

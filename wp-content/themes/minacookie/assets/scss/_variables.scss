@@ -1,0 +1,86 @@
+// DEFAULT
+$color1 : #FBAF21;  
+$color2: #000;
+$color3: #F9F7F7 ;   
+$color4: #9B9B9B; 
+
+$color5: #ec2028;
+$color6: #5497f4;  
+
+$section_pd : 100px; 
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,900|Quicksand:300,400,500,700&subset=vietnamese');
+$img_1001 : '../images/bg-svg/10-01.svg';
+$img_0601 : '../images/bg-svg/06-01.svg';
+$img_0501 : '../images/bg-svg/05-01.svg';
+$img_0301 : '../images/bg-svg/03-01.svg';
+
+
+ 
+// Font 
+$font1 : 'Quicksand', sans-serif;
+$font2 : "Playfair Display", serif; 
+
+@import "variables/header";
+@import "variables/menu";
+@import "variables/form";
+@import "variables/slider";
+@import "variables/tabs";
+@import "variables/pagination";   
+@import "variables/thumb";   
+
+
+
+/* EXTEND 
+-------------------------------------------------*/
+#header  {   
+  @extend %header-1;   
+}
+.divmodal {   
+    @extend %divmodal;          
+}
+
+.owl-carousel {  
+    @extend %owl;      
+    &.nav-2 {
+        @extend %owl-nav-2;
+    }  
+}
+.cttab-v1 {
+    @extend %cttab-v1;
+}
+.thumb-1 {
+    @extend %thumb-1;
+}
+ul.page-numbers {  
+    @extend %pagination-1; 
+}
+
+.rowlabel {
+    @extend %rowlabel;  
+}
+
+//Form
+    .btn {    
+        @extend %btn;           
+    }
+    .input {   
+        @extend %input;          
+    }
+    select {   
+        @extend %select;          
+    }
+    .divselect {
+        @extend %divselect;
+    }
+    // label.checkbox {    
+    //     @extend %checkbox;           
+    // }
+    // label.radio {    
+    //     @extend %radio;           
+    // }
+    // label.switch {    
+    //     @extend %switch;           
+    // }
+
+

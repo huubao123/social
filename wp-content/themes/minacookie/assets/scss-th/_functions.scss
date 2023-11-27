@@ -1,0 +1,24 @@
+/*=========================================================*/
+/*Tho dang*/
+/*=========================================================*/
+@mixin respond-to($media) {
+  @media only screen and (max-width: $media + 'px') {
+    @content;
+  }
+}
+/*========================================================*/
+@mixin respond-toSP($media) {
+  @media only screen and (min-width: $media + 'px') {
+    @content;
+  }
+}
+/*========================================================*/
+@mixin formLayout1() {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D2;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+}

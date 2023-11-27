@@ -1,0 +1,22 @@
+// Thumbnail 
+/*----------------------------------------------------------------------------------------------*/
+%thumb-1 {
+    @include thumb(
+      $thumb1_bg, 
+      $thumb1_radius, 
+      $thumb1_border, 
+      $thumb1_border_color, 
+      $thumb1_width, 
+      $thumb1_height,
+      $thumb1_padding,
+      $thumb1_margin,
+      $thumb1_shadow,
+      $thumb1_float,
+    );
+    &>img {
+      display: block; width: 100%;
+      @if( $thumb1_radius != n){
+        border-radius: $thumb1_radius;
+      }      
+    }
+}

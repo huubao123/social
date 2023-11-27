@@ -1,0 +1,25 @@
+%accordion-1 {
+  .item { box-shadow: none; -webkit-box-shadow: none; border-bottom: 1px solid rgba(0,0,0,0.3); border-radius: 0; margin: 0;}
+  .item-heading { 
+    a {
+      display: block; font-size: 18px; line-height: 24px; padding: 15px; position: relative;
+      &:after { 
+        content: ""; position: absolute; right: 15px; top: 50%; @include translateY(50%);
+          transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+        width: 0; 
+        height: 0; 
+        border-left: 6px solid transparent; 
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #808080;
+
+      }
+      &.collapsed {
+        &:after {
+          -webkit-transform: translateY(50%) rotate(180deg); transform: translateY(50%) rotate(180deg);
+        }
+      }
+     } 
+  }
+  .item-body { padding: 0 15px 15px; }
+}

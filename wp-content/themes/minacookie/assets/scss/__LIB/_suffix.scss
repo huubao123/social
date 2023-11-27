@@ -1,0 +1,126 @@
+.cl1  { color: $color1}
+.cl2  { color: $color2}
+.cl3  { color: $color3}
+.cl4  { color: $color4}
+.cl5  { color: $color5}
+.cl6  { color: $color6}
+
+
+.bg1  { background-color: $color1}
+.bg2  { background-color: $color2}
+.bg3  { background-color: $color3}
+.bg4  { background-color: $color4}
+.bg5  { background-color: $color5}
+.bg6  { background-color: $color6}
+
+
+.b { font-weight: 700}
+
+.w1 { font-weight: 100 }
+.w3 { font-weight: 300 }
+.w4 { font-weight: 400 }
+.w5 { font-weight: 500 }
+.w7 { font-weight: 700 }
+.w9 { font-weight: 900 }
+
+
+
+
+$ulr : 5;
+@while $ulr < 30
+{
+  .row-space-#{$ulr} > * + *  { margin: #{$ulr}px 0 0 ;  }
+  $ulr : ($ulr + 5); 
+}
+
+
+/* Margin - Padding */
+.margin-0 {margin: 0 !important;}
+.padding-0 {padding: 0 !important;}
+
+.pt-0 { padding-top: 0;}
+.pb-0 { padding-bottom: 0;}
+
+.mb-10 { margin-bottom: 10px;}
+.mb-20 { margin-bottom: 20px;}
+.mb-30 { margin-bottom: 30px;}
+.mb-40 { margin-bottom: 40px;}
+
+
+/* Custom space grid */
+.grid-space-0 {
+    margin-left: 0; margin-right: 0;
+    &>[class*="col-"] { padding-left: 0; padding-right: 0; }
+}
+.grid-space-2 {
+    margin-left: -1px; margin-right: -1px;
+    &>[class*="col-"] { padding-left: 1px; padding-right: 1px; }
+}
+.grid-space-4 {
+    margin-left: -2px; margin-right: -2px;
+    &>[class*="col-"] { padding-left: 2px; padding-right: 2px; }
+}
+.grid-space-10 {
+    margin-left: -5px; margin-right: -5px;
+    &>[class*="col-"] { padding-left: 5px; padding-right: 5px; }
+}
+.grid-space-16 {
+    margin-left: -8px; margin-right: -8px;
+    &>[class*="col-"] { padding-left: 8px; padding-right: 8px; }
+}
+.grid-space-20 {
+    margin-left: -10px; margin-right: -10px;
+    &>[class*="col-"] { padding-left: 10px; padding-right: 10px; }
+}
+
+@include min1200() {
+    .grid-space-40 {
+        margin-left: -20px; margin-right: -20px;
+        &>[class*="col-"] { padding-left: 20px; padding-right: 20px; }
+    }
+    .grid-space-60 {
+        margin-left: -30px; margin-right: -30px;
+        &>[class*="col-"] { padding-left: 30px; padding-right: 30px; }
+    }
+    .grid-space-80 {
+        margin-left: -40px; margin-right: -40px;
+        &>[class*="col-"] { padding-left: 40px; padding-right: 40px; }
+    }
+    .grid-space-120 {
+        margin-left: -60px; margin-right: -60px;
+        &>[class*="col-"] { padding-left: 60px; padding-right: 60px; }
+    }        
+    .grid-space-200 {
+        margin-left: -100px; margin-right: -100px;
+        &>[class*="col-"] { padding-left: 100px; padding-right: 100px; }
+    }    
+} 
+
+
+@include min992() {
+    .col-md-6:nth-child(2n+1),
+    .col-md-4:nth-child(3n+1),
+    .col-md-3:nth-child(4n+1),
+    .col-md-2:nth-child(6n+1){ clear: both;}
+}
+
+@include max991() {
+    .col-sm-6:nth-child(2n+1),
+    .col-sm-4:nth-child(3n+1),
+    .col-sm-3:nth-child(4n+1),
+    .col-sm-2:nth-child(6n+1){ clear: both;}
+}
+
+@include max767() {
+    .col-xs-12,
+    .col-xs-6:nth-child(2n+1),
+    .col-xs-4:nth-child(3n+1),
+    .col-xs-3:nth-child(4n+1),
+    .col-xs-2:nth-child(6n+1){ clear: both;}
+}
+
+@include max480() {
+    .col-xxs-12 { width: 100%; clear: both;}
+}
+
+

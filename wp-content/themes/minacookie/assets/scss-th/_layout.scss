@@ -1,0 +1,48 @@
+// /*=================layout=======================*/
+.l-main {
+  position: relative;
+  &--service1 {
+    padding-top: 90px;
+    background: url(../images/index/td-bg-top.png) no-repeat left top;
+    background-size: 100%;
+    @include respond-to(767) { padding-top: 40px; }
+  }
+  &--pb1{
+  	padding-bottom: 120px;
+  	@include respond-to(767) { padding-bottom: 60px; }
+  }
+}
+/*------------------------------------------------*/
+.l-visual {
+  display: block;
+  position: relative;
+}
+/*------------------------------------------------*/
+.l-box1 {
+  .c-box1:not(:last-child) { margin-bottom: 30px; }
+}
+/*------------------------------------------------*/
+.l-faq1 {
+  .c-faq1 {
+    margin-bottom: 20px;
+    @include respond-to(767) { margin-bottom: 15px; }
+  }
+}
+/*------------------------------------------------*/
+
+
+// header
+.search-header{
+  float: left;
+  overflow: hidden;
+  margin-left: 50px;
+  .searchform{
+    margin: -4px 0 0 0;
+    width: 400px;
+    max-width: 100%;
+    .input + .btn{
+      transform: translateY(-50%);
+      top: 50%;
+    }
+  }
+}

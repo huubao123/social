@@ -1,0 +1,64 @@
+.c-banner1 {
+	@include respond-toSP(1200) { padding-top: 170px; }
+}
+.c-banner2 {
+	// color: $gray;
+	@include respond-toSP(768) { padding: 180px 0; }
+	.desc {
+		// color: $gray;
+		@include respond-to(767) { font-size: 18px; }
+	}
+}
+.c-title1 {
+	font-size: 50px;
+	@include respond-to(767) { font-size: 36px; }
+}
+.item { text-align: justify; }
+
+/*============*/
+/* PhuPM Edit */
+/*============*/
+
+/* Recruit */
+.mg50>.item .topinfo .img img {
+	max-width: 100%;
+}
+
+.thumb-1 {
+	margin-bottom: 40px;
+}
+
+@include respond-toSP(1200){
+	.thumb-1 {
+		margin-bottom: 0;
+	}
+}
+  
+.item {
+	h3,
+	.xstitle {
+		text-align: left;
+	}
+}
+
+/* About */
+.p-about2.mg10 .c-title1,
+.mg12 h2 {
+	margin-top: 40px;
+}
+
+@include respond-toSP(768){
+	.p-about2.mg10 .c-title1,
+	.mg12 h2 {
+		margin-top: 0;
+	}
+}
+
+.mg10 .col-1 .item div.img {
+	margin-bottom: 40px;
+}
+
+/* Footer */
+#footer-pc .title1 {
+	margin-top: -15px;
+}

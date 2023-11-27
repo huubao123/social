@@ -1,0 +1,76 @@
+[class*="acordion"] { 
+  margin-bottom: 30px;
+  &>.tab {
+    border-bottom: 1px solid #D3D3D3;
+    &>.tab-title{
+        display: block;
+        padding:15px 0; font-weight: 700;
+        cursor: pointer;
+        position: relative;     
+        .triangle {
+          @include middleY; right: 10px;
+        }
+    }
+  }
+}
+
+
+
+%acordion-1 { 
+  &>.tab {
+    border-bottom: 1px solid #D3D3D3;
+    &>.tab-title{
+      &:after {
+          content: "";
+          position: absolute;
+          right: 10px;
+          top:50%;
+          margin-top: -3px;
+          display: block;
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 6px solid rgba(0,0,0,.2);
+      }       
+    }
+    &.show>.tab-title:after {
+        @include rotateX(180deg);
+    }   
+  }
+}
+
+
+
+
+%acordion-v1 { 
+  &>.tab {
+    border-bottom: 1px solid #D3D3D3; min-height: 75px; position: relative; color: #fff;
+      &:before {
+        @include absolute; content: "";background-color: rgba(0,0,0,0.7);
+      }    
+    &>.tab-title{
+      @include absolute; z-index: 2; @extend .tss;
+      &>.triangle { color: #fff;}
+      &>.inner {
+        @include middleY(); left: 10px; right: 10px; 
+        line-height: 25px; font-weight: 700; font-size: 18px;
+        i { font-size: 25px; float: left; margin-right: 10px;}
+      }
+    }
+    &>.tab-content {
+      position: relative; z-index: 1;
+      &>.inner {
+        padding: 25px;
+      }
+    }
+    &.show{
+      &>.tab-title {
+         opacity: 0
+      }  
+    } 
+  }
+}
+
+
+

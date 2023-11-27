@@ -1,0 +1,193 @@
+// OWL 
+/*----------------------------------------------------------------------------------------------*/
+%owl {
+  display: block !important; width: auto !important;
+  &>.item-visible:not(:first-child) {  display: none;  }
+  .owl-lazy { opacity: 1 !important}
+  &.owl-visible {
+    .owl-stage-outer { overflow: visible;}
+    .owl-item {
+      opacity: 0.5; @extend .tss;
+      .text { @extend .tss; opacity: 0;}
+      &.active {
+        opacity: 1;
+        .text {  opacity: 1;}
+      }
+    }
+  }  
+  .owl-nav {
+      position: absolute;
+      left: 0;
+      right: 0;
+      @if($nav_assign == 0 ){
+        top : 0;
+      }@else if($nav_assign == 1 ){ 
+        top: 50%;
+        
+      }@else {
+        bottom:$nav_item_height; 
+      }
+      &>div {
+        position: absolute; cursor: pointer;
+        text-align: center;   @extend .tss; text-align: center;
+        width:$nav_item_width; 
+        height: $nav_item_height; 
+        line-height: $nav_item_height - $nav_item_border_width*2;   
+        font-size: $nav_item_size; 
+        border-radius: $nav_item_radius; 
+        background-color: $nav_item_bg;
+        color: $nav_item_color;
+        @if($nav_item_border_width > 0) {
+          border:$nav_item_border_width solid $nav_item_border_color;
+        }
+
+        @include transition(0.3s);
+        
+        @if($nav_assign == 1 ){
+          @include translateY (-50%); 
+        }
+
+        &:hover { color: $nav_item_hover_color; } 
+        i {  line-height: inherit; }
+        &.owl-prev { left: $nav_prev;  }
+        &.owl-next { right: $nav_next;  }
+      }
+  }  
+  .owl-dots { 
+    padding: 0; position: absolute;    
+
+    @if($dots_positon == 0) {
+       position: relative; padding-top: 20px; padding-bottom: 20px; 
+    }@else if($dots_positon == 1) {
+      bottom: $dots_space;   
+    }@else {
+      top: $dots_space;   
+    }
+
+    @if($dots_assign == 0) {
+      left: $dots_space;   text-align: left;
+    }@else if($dots_assign == 1) {
+      text-align: center; 
+      @if($dots_positon != 0) {
+        @include middleX; 
+      }
+    }@else { 
+      right: $dots_space; text-align: right;
+    }
+
+    &>div {
+      display: inline-block;
+      span {
+          display: block;   -webkit-backface-visibility: visible;        @extend .tss;
+          width: $dots_item_size;
+          height: $dots_item_size;
+          margin: 0 $dots_item_mg;
+          border-radius: $dots_item_radius; 
+          background-color: $dots_item_color ;
+          @if($dots_item_border == 0) {
+            border: none;
+          }@else {
+            border:1px solid $dots_item_border_color;
+          }
+      }
+      &.active, &:hover {
+        span { background-color: $dots_item_hover_color; border-color: $dots_item_hover_border_color }
+      } 
+    } 
+  }  
+}
+
+
+%owl-per { 
+  .owl-dots {
+    counter-reset: slides-num;
+    &:after {
+      content: counter(slides-num); 
+      display: inline-block;
+    }
+  }
+  .owl-dot {
+      display: inline-block; opacity: 0; width: 0; overflow: hidden;
+    counter-increment: slides-num; 
+    span {  display: none !important; }
+    &:before {
+      content:  counter(slides-num) "/" ; 
+      display: inline-block;
+    }
+    &.active { opacity: 1; width: auto; overflow: visible;}
+  }
+}
+
+
+%owl-nav-1 {
+  & {    margin: 0 $nav_1_mg;  }
+  .owl-nav { left: -$nav_1_mg; right: -$nav_1_mg;}
+}
+%owl-nav-2 {
+  @include min992 {
+    .owl-nav { left: -$nav_2_mg; right: -$nav_2_mg;}
+  }
+}
+
+%owl-nav-3 {
+  margin-bottom: 120px;
+  .owl-nav {
+      top: auto; text-align: center; bottom: -80px;
+      &>div {
+        position: relative; display: inline-block; margin: 0 5px;
+        @include translateY (0);  text-align: center !important;
+        &.owl-prev { left: auto; }
+        &.owl-next { right: auto; }
+
+      }
+  }
+}
+
+
+
+
+
+
+/* Style OWL */
+%owl-style-1 {
+    .owl-nav {
+        top: auto;
+        left: auto;
+        right: 10px;
+        bottom: 10px; 
+        width: 80px;  height: 35px;
+        &>div {
+          @include translateY (0); text-align: center !important; 
+          box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25); 
+          background-color: #fff;  color: $color3;  
+          width: 35px; height: 35px; font-size: 12px; line-height: 35px;
+          &:hover { color: $color1; } 
+          &.owl-prev { left: 0 }
+          &.owl-next { right: 0; }
+        }
+    }
+    .owl-dots { 
+      left: auto;
+      bottom: 13px; 
+      right: 110px;
+    }
+}
+
+
+/* SYNC OWL */
+%syn-owl {
+  .wrap-syn-1 {
+    margin-bottom: 10px;
+  }
+  .wrap-syn-2 {
+    .item {
+      position: relative;
+      &:before {
+        content: ""; @include absolute; border:2px solid transparent; z-index: 3;
+      }
+    }   
+    .current {
+      .item:before { border-color: $color1; }
+    }   
+  }
+}

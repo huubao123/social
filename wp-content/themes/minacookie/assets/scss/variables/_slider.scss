@@ -1,0 +1,39 @@
+// NAV
+$nav_assign : 1;  // top : 0, middle : 1, bottom: 2;
+	$nav_item_width : 50px;
+	$nav_item_height : 50px;
+	$nav_item_size : 40px;
+	$nav_item_bg :transparent; 
+	$nav_item_color :$color2;
+	$nav_item_radius :10px;
+	$nav_item_border_width :0;
+	$nav_item_border_color :$color1;
+	$nav_next :0;
+	$nav_prev :0;
+		$nav_item_hover_color :$color1;
+
+	// nav style
+	$nav_1_mg:50px;
+	$nav_2_mg:50px;
+
+
+// DOTS
+$dots_space : 20px;
+$dots_positon : 1; // after : 0, bottom : 1, top : 2; 
+$dots_assign : 1;  // left : 0, center : 1, right: 2;
+	$dots_item_size : 10px;
+	$dots_item_mg : 6px;
+	$dots_item_radius : 100%;
+	$dots_item_color : #D3D3D3;
+	$dots_item_border : 0;
+	$dots_item_border_color : $color1;
+		$dots_item_hover_color : $color1;
+		$dots_item_hover_border_color : $color1;
+
+
+
+
+
+
+
+
